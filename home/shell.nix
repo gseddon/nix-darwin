@@ -8,7 +8,7 @@ _: {
     shellAliases = {
       la = "ls -la";
       ".." = "cd ..";
-      "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin/.config/nix";
+      "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin#macbook-air";
     };
    oh-my-zsh = {
          enable = true;

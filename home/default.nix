@@ -2,9 +2,11 @@
 {
   imports = [
     ./packages.nix
-    ./programs.nix
+    ./misc-programs.nix
     ./shell.nix
     ./mise.nix
+    ./vim.nix
+    ./git.nix
   ];
 
   home = {

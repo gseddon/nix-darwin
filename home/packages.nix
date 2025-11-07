@@ -10,13 +10,13 @@
       htop
       tree
       ripgrep
-      #gh
+      gh
 
       # programming languages
       mise # node, deno, bun, rust, python, etc.
 
       # misc
-      #nil
+      nil
       #biome
       nixfmt-rfc-style
       yt-dlp
