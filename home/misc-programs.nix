@@ -1,4 +1,4 @@
-{ primaryUser, pkgs, config, ... }:
+{ primaryUser, pkgs, config, lib, ... }:
 {
   programs = {
     tmux = {
@@ -18,4 +18,10 @@
     };
 
   };
+  
+  home.activation.cloneSpacemacs = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    if [ ! -d "${config.home.homeDirectory}/.emacs.d/.git" ]; then
+      $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/syl20bnr/spacemacs.git -b develop "${config.home.homeDirectory}/.emacs.d"
+    fi
+  '';
 }

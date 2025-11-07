@@ -13,13 +13,23 @@
     global.brewfile = true;
 
     casks = [
-    "1password"
-    "obsidian"
-    "raycast"
-    "monitorcontrol"
-    "whatsapp"
-    "visual-studio-code"
-    #"betterdisplay"
+      "1password"
+      "android-studio"
+      "claude"
+      "karabiner-elements"
+      "kiro"
+      "obsidian"
+      "raycast"
+      "monitorcontrol"
+      "whatsapp"
+      "visual-studio-code"
+      #"betterdisplay"
+    ];
+    brews = [
+      "emacs-plus"
+    ];
+    taps = [
+      "d12frosted/emacs-plus"
     ];
   };
 }

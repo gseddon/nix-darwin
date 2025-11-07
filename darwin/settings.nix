@@ -15,7 +15,6 @@
 
     #startup.chime = false;
 
-
     defaults = {
       loginwindow = {
         GuestEnabled = false;
@@ -38,5 +37,10 @@
         # TODO can I do caps lock ctrl here?
       };
     };
+
+  };
+  power = {
+    sleep.display = 20;
+    sleep.computer = 45;
   };
 }

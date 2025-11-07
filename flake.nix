@@ -36,6 +36,5 @@
         ];
         specialArgs = { inherit inputs self primaryUser; };
       };
-
     };
 }
