@@ -8,7 +8,7 @@ _: {
     shellAliases = {
       la = "ls -la";
       ".." = "cd ..";
-      "nix-switch" = "sudo darwin-rebuild switch --flake ~/.config/nix";
+      "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin/.config/nix";
     };
    oh-my-zsh = {
          enable = true;
@@ -27,7 +27,7 @@ _: {
            #fpath=(~/.zsh_completion $fpath)
            '';
        };
-    initExtra = ''
+    initContent = ''
      # do not show prompt in agnoster https://stackoverflow.com/a/28492373
      prompt_context() {}
      '';
