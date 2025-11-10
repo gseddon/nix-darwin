@@ -36,5 +36,13 @@
         ];
         specialArgs = { inherit inputs self primaryUser; };
       };
+      darwinConfigurations."work-mac" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./darwin
+          ./hosts/work-mac/configuration.nix
+        ];
+        specialArgs = { inherit inputs self primaryUser; };
+      };
     };
 }
