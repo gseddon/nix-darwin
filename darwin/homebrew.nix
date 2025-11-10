@@ -1,4 +1,10 @@
 { ... }:
+let
+  padel_apps = [
+    "android-studio"
+    "genymotion"
+  ];
+in
 {
   homebrew = {
     enable = true;
@@ -14,7 +20,6 @@
 
     casks = [
       "1password"
-      "android-studio"
       "claude"
       "karabiner-elements"
       "kiro"
@@ -24,7 +29,7 @@
       "whatsapp"
       "visual-studio-code"
       #"betterdisplay"
-    ];
+    ] ++ padel_apps;
     brews = [
       "emacs-plus"
     ];

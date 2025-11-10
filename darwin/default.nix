@@ -60,8 +60,16 @@
       "/opt/homebrew/bin"
     ];
     systemPackages = with pkgs; [
+      libgccjit
       #curl
     ];
     pathsToLink = [ "/Applications" ];
   };
+
+  system.activationScripts.extraActivation.text = ''
+    # Link Homebrew OpenJDK for system-wide use
+    if [ -d "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk" ]; then
+      ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+    fi
+  '';
 }

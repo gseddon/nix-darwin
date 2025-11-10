@@ -24,4 +24,10 @@
       $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/syl20bnr/spacemacs.git -b develop "${config.home.homeDirectory}/.emacs.d"
     fi
   '';
+
+  home.activation.intelliMacs = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    if [ ! -d "${config.home.homeDirectory}/.intellimacs/.git" ]; then
+      $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/MarcoIeni/intellimacs.git "${config.home.homeDirectory}/.intellimacs"
+    fi
+  '';
 }
