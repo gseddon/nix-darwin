@@ -9,6 +9,7 @@
   # host-specific homebrew casks
   homebrew.casks = [
     # "slack"
+    "android-studio"
   ];
 
   # host-specific home-manager configuration

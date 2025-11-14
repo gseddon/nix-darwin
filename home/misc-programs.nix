@@ -30,4 +30,13 @@
       $DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/MarcoIeni/intellimacs.git "${config.home.homeDirectory}/.intellimacs"
     fi
   '';
+
+#  home.activation.dotfiles = lib.hm.dag.entryAfter ["writeBoundary"] ''
+#    if [ ! -d "${config.home.homeDirectory}/.cfg/.git" ]; then
+#      #$DRY_RUN_CMD ${pkgs.git}/bin/git clone https://github.com/gseddon/dotfiles.git /tmp/dotfiles
+#      /usr/bin/git clone git@github.com:gseddon/dotfiles.git /tmp/dotfiles
+#      mv /tmp/dotfiles/.git "${config.home.homeDirectory}/.cfg"
+#       config config --local status.showUntrackedFiles no
+#    fi
+#  '';
 }

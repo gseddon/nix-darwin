@@ -1,8 +1,6 @@
 { ... }:
 let
   padel_apps = [
-    "android-studio"
-    "genymotion"
   ];
 in
 {
@@ -19,9 +17,10 @@ in
     global.brewfile = true;
 
     casks = [
-      "1password"
-      "claude"
+      #"1password"
+      "chatgpt"
       "karabiner-elements"
+      "kitty"
       "kiro"
       "obsidian"
       "raycast"
@@ -34,7 +33,7 @@ in
       "emacs-plus"
     ];
     taps = [
-      "d12frosted/emacs-plus"
+      "d12frosted/homebrew-emacs-plus"
     ];
   };
 }

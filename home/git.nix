@@ -1,22 +1,23 @@
-{config, ...}:
-  {
-    programs.git = {
+{ config, ... }:
+{
+  programs.git = {
     enable = true;
     lfs = {
       enable = true;
       skipSmudge = true;
     };
     ignores = [
-    ".idea"
-    "*.code-workspace"
-    ".vscode"
-    "**/.DS_Store"
+      ".idea"
+      "*.code-workspace"
+      ".vscode"
+      "**/.DS_Store"
     ];
     settings = {
       user = {
-      email = "gareth.seddon@gmail.com";
-      name = "Gareth Seddon";
-    };
+        # Set in local machine configuration now
+        # email = "gareth.seddon@gmail.com";
+        name = "Gareth Seddon";
+      };
       alias = {
         st = "status";
         co = "checkout";

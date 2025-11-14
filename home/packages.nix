@@ -3,6 +3,7 @@
   home = {
     packages = with pkgs; [
       # dev tools
+      awscli
       curl
       direnv
       fzf
@@ -10,6 +11,7 @@
       htop
       tree
       ripgrep
+      act
       gh
 
       # programming languages

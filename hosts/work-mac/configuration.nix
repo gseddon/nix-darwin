@@ -8,7 +8,8 @@
 
   # host-specific homebrew casks
   homebrew.casks = [
-    "bettertouchtool"
+    #"bettertouchtool"
+    "cursor"
   ];
 
   # host-specific home-manager configuration
@@ -18,6 +19,7 @@
     ];
 
     programs = {
+      git.settings.user.email = "gseddon@axon.com";
       zsh = {
         initContent = ''
           # Source shell functions
