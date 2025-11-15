@@ -3,6 +3,19 @@
   primaryUser,
   ...
 }:
+let
+  tilt-packages = with pkgs; [
+    tilt
+    kubernetes-helm
+    kubeconform
+    kubectl
+    kubelogin
+    go-task
+    gh
+    awscli
+    azure-cli
+  ];
+in
 {
   networking.hostName = "EU-JPW5QPV4P4";
 
@@ -16,7 +29,7 @@
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
       #graphite-cli
-    ];
+    ] ++ tilt-packages;
 
     programs = {
       git.settings.user.email = "gseddon@axon.com";
@@ -24,6 +37,7 @@
         initContent = ''
           # Source shell functions
           source ${./shell-functions.sh}
+          source ~/.secrets
         '';
       };
     };

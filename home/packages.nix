@@ -5,17 +5,16 @@
       # dev tools
       awscli
       curl
-      direnv
+      # direnv
       fzf
       tmux
       htop
       tree
       ripgrep
       act
-      gh
 
       # programming languages
-      mise # node, deno, bun, rust, python, etc.
+      # mise # node, deno, bun, rust, python, etc.
 
       # misc
       nil
@@ -28,6 +27,7 @@
       # fonts
       nerd-fonts.fira-code
       nerd-fonts.fira-mono
+      jetbrains-mono
     ];
   };
 }

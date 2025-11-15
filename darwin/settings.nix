@@ -1,11 +1,14 @@
-{ self, ... }:
+{ self, primaryUser, ... }:
 {
   # touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
   # 120 minutes to re-auth
+  # Allow darwin-rebuild to run without password prompt
   security.sudo.extraConfig = ''
     Defaults        timestamp_timeout=120
+    ${primaryUser} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
+    ${primaryUser} ALL=(ALL) NOPASSWD: /nix/store/*/bin/darwin-rebuild
   '';
 
   # system defaults and preferences

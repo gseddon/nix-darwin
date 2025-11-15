@@ -14,7 +14,8 @@ _: {
       enable = true;
       plugins = [
         "aws"
-        "direnv"
+        "azure"
+        # "direnv"
         "fzf"
         "git"
         "z"

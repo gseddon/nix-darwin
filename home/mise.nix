@@ -5,7 +5,8 @@
     enableZshIntegration = true;
 
     settings = {
-      experimental = true;
+      # experimental = true;
+      experimental = false;
       verbose = false;
       auto_install = true;
     };

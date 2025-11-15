@@ -12,10 +12,10 @@
     };
 
     # https://github.com/lovesegfault/nix-config/blob/master/users/bemeurer/dev/default.nix#L24
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
+    # direnv = {
+    #   enable = true;
+    #   nix-direnv.enable = true;
+    # };
 
   };
   
