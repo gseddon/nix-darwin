@@ -36,7 +36,6 @@ in
       zsh = {
         initContent = ''
           # Source shell functions
-          source ${./shell-functions.sh}
           source ~/.secrets
         '';
       };

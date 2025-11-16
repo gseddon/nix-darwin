@@ -34,6 +34,7 @@ _: {
     initContent = ''
       # do not show prompt in agnoster https://stackoverflow.com/a/28492373
       prompt_context() {}
+      source ${./shell-functions.sh}
     '';
     history = {
       size = 50000;

@@ -1,8 +1,4 @@
 { ... }:
-let
-  padel_apps = [
-  ];
-in
 {
   homebrew = {
     enable = true;
@@ -28,7 +24,7 @@ in
       "whatsapp"
       "visual-studio-code"
       #"betterdisplay"
-    ] ++ padel_apps;
+    ];
     brews = [
       "emacs-plus"
     ];

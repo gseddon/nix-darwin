@@ -10,6 +10,7 @@
   homebrew.casks = [
     # "slack"
     "android-studio"
+    "http-toolkit"
   ];
 
   # host-specific home-manager configuration
@@ -19,10 +20,10 @@
     ];
 
     programs = {
+      git.settings.user.email = "gareth.seddon@gmail.com";
       zsh = {
         initContent = ''
-          # Source shell functions
-          source ${./shell-functions.sh}
+          # source ${./shell-functions.sh}
         '';
       };
     };

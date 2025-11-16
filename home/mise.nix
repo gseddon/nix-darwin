@@ -25,8 +25,6 @@
 
     # set global tool versions (auto_install will handle installation)
     ${pkgs.mise}/bin/mise use --global node@lts
-    ${pkgs.mise}/bin/mise use --global bun@latest
-    ${pkgs.mise}/bin/mise use --global deno@latest
     ${pkgs.mise}/bin/mise use --global uv@latest
     # ${pkgs.mise}/bin/mise use --global rust@stable
   '';
