@@ -1,4 +1,11 @@
 { ... }:
+let
+  padel_apps = [
+    "android-studio"
+    "genymotion"
+    "http-toolkit"
+  ];
+in
 {
   homebrew = {
     enable = true;
@@ -13,7 +20,9 @@
     global.brewfile = true;
 
     casks = [
-      #"1password"
+      "1password"
+      "claude"
+      "claude-code"
       "chatgpt"
       "karabiner-elements"
       "kitty"
@@ -26,7 +35,9 @@
       #"betterdisplay"
     ];
     brews = [
+      "hatch"
       "emacs-plus"
+      "openjdk@21" # sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk   
     ];
     taps = [
       "d12frosted/homebrew-emacs-plus"

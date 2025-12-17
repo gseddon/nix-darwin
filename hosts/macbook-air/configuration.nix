@@ -16,6 +16,7 @@
   # host-specific home-manager configuration
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
+      ffmpeg
       #graphite-cli
     ];
 
