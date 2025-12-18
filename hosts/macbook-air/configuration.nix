@@ -17,7 +17,6 @@
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
       ffmpeg
-      #graphite-cli
     ];
 
     programs = {

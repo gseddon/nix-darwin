@@ -36,7 +36,6 @@ in
 
   # host-specific homebrew casks
   homebrew.casks = [
-    #"bettertouchtool"
     "cursor"
   ];
   homebrew.brews = [

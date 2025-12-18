@@ -2,7 +2,6 @@
 let
   padel_apps = [
     "android-studio"
-    "genymotion"
     "http-toolkit"
   ];
 in
@@ -21,7 +20,6 @@ in
 
     casks = [
       "1password"
-      "claude"
       "claude-code"
       "chatgpt"
       "karabiner-elements"
@@ -33,7 +31,7 @@ in
       "whatsapp"
       "visual-studio-code"
       #"betterdisplay"
-    ];
+    ] ++ padel_apps;
     brews = [
       "hatch"
       "emacs-plus"
