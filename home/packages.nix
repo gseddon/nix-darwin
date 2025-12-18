@@ -4,7 +4,7 @@
     packages = with pkgs; [
       # dev tools
       awscli
-      curl
+      # curl
       # direnv
       fzf
       tmux

@@ -3,6 +3,7 @@
   inputs,
   self,
   primaryUser,
+  config,
   ...
 }:
 {
@@ -22,6 +23,9 @@
       ];
       # disabled due to https://github.com/NixOS/nix/issues/7273
       # auto-optimise-store = true;
+      extra-sandbox-paths = [
+        "${config.home.homeDirectory}/.secrets"
+      ];
     };
     enable = false; # using determinate installer
   };
@@ -49,6 +53,7 @@
           # broken = true;
         };
       };
+      
     })
   ];
 

@@ -11,6 +11,19 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # declarative homebrew management
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    # terraform versions
+    nixpkgs-terraform.url = "github:stackbuilders/nixpkgs-terraform";
+
+    # translation-v2 application dependencies
+    # translation-v2.url = "git+ssh://git@git.taservs.net/rto/translation-v2.git";
+    # translation-v2.url = "path:/Users/gseddon/git/translation-v2";
+    # translation-v2.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  nixConfig = {
+    extra-substituters = "https://nixpkgs-terraform.cachix.org";
+    extra-trusted-public-keys = "nixpkgs-terraform.cachix.org-1:8Sit092rIdAVENA3ZVeH9hzSiqI/jng6JiCrQ1Dmusw=";
   };
 
     outputs =
@@ -20,6 +33,7 @@
       nixpkgs,
       home-manager,
       nix-homebrew,
+      nixpkgs-terraform,
       ...
     }@inputs:
     let

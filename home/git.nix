@@ -33,6 +33,15 @@
       color.ui = "auto";
       push.default = "simple";
       rebase.autostash = "true";
+      pull.rebase = "true";
+      fetch.prune = "true";
+      github.user = "gareth.seddon@gmail.com";
+      # URL rewrites to use SSH instead of HTTPS
+      url = {
+        "git@git.taservs.net:" = {
+          insteadOf = "https://git.taservs.net/";
+        };
+      };
     };
   };
 }

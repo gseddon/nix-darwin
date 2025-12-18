@@ -9,6 +9,8 @@
       experimental = false;
       verbose = false;
       auto_install = true;
+      # Reduce hook overhead by only running when .tool-versions changes
+      shims_auto_update = false;
     };
   };
 

@@ -113,6 +113,11 @@ function magit () {
     fi
 }
 
+function good_morning() {
+  osascript -e "tell application \"Viscosity\" to connect \"dv1-vpn-client\""
+  osascript -e "tell application \"Viscosity\" to connect \"ag1-vpn-client\""
+}
+
 n ()
 {
     # Block nesting of nnn in subshells
