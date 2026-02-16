@@ -3,7 +3,7 @@
   home = {
     packages = with pkgs; [
       # dev tools
-      awscli
+      awscli2
       # curl
       # direnv
       fzf
@@ -12,6 +12,10 @@
       tree
       ripgrep
       act
+      bat
+      yq
+
+      sshpass
 
       # programming languages
       # mise # node, deno, bun, rust, python, etc.
@@ -21,8 +25,9 @@
       #biome
       nixfmt-rfc-style
       yt-dlp
-      #ffmpeg
+      ffmpeg
       #ollama
+      _1password-cli
 
       # fonts
       nerd-fonts.fira-code

@@ -33,6 +33,7 @@ in
       #"betterdisplay"
     ] ++ padel_apps;
     brews = [
+      "displayplacer"
       "hatch"
       "emacs-plus"
       "openjdk@21" # sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk   

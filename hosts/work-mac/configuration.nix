@@ -11,15 +11,16 @@ let
   
   tilt-packages = with pkgs; [
     tilt
-    kubernetes-helm
+    # kubernetes-helm removed - using homebrew helm@3 instead
     kubeconform
     kubectl
     kubecolor
     kubelogin
     go-task
     gh
-    awscli
     azure-cli
+    # testkube
+    playwright-test
   ];
   tf-packages = with pkgs; [
     # I've also put terragrunt in local bin because I'm a bad person
@@ -37,8 +38,10 @@ in
   # host-specific homebrew casks
   homebrew.casks = [
     "cursor"
+    "aws-vpn-client"
   ];
   homebrew.brews = [
+    { name = "helm@3"; link = true; }
     "testkube"
   ];
 
@@ -46,6 +49,7 @@ in
   # host-specific home-manager configuration
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
+      go
       android-tools
       #graphite-cli
     ] ++ tilt-packages ++ tf-packages;
