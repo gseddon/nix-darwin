@@ -41,6 +41,16 @@ function gitclean() {
   git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
 }
 
+function main() {
+  local branch
+  branch=$(git branch --list main master 2>/dev/null | head -1 | tr -d '* ')
+  if [ -z "$branch" ]; then
+    echo "No main or master branch found"
+    return 1
+  fi
+  git checkout "$branch" && git pull
+}
+
 
 function imix_test() {
   iex -S mix test $1 --trace
@@ -151,7 +161,6 @@ n ()
 export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
 alias ncp="cat ${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection} | tr '\0' '\n'"
 
-export MIX_HOME="$HOME/mix"
-export ERL_AFLAGS="-kernel shell_history enabled"
 export HOMEBREW_AUTO_UPDATE_SECS=604800
+export EDITOR=cursor
 

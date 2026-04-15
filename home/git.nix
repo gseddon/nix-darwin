@@ -36,6 +36,9 @@
       pull.rebase = "true";
       fetch.prune = "true";
       github.user = "gareth.seddon@gmail.com";
+      "credential \"https://github.com\"" = {
+        helper = "!/opt/homebrew/bin/gh auth git-credential";
+      };
       # URL rewrites to use SSH instead of HTTPS
       url = {
         "git@git.taservs.net:" = {

@@ -34,9 +34,10 @@ in
     ] ++ padel_apps;
     brews = [
       "displayplacer"
-      "hatch"
       "emacs-plus"
-      "openjdk@21" # sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk   
+      "hatch"
+      "openjdk@21" # sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+      "swiftgen"   # iOS code generation from resources
     ];
     taps = [
       "d12frosted/homebrew-emacs-plus"

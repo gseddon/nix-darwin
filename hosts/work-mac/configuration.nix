@@ -8,7 +8,7 @@ let
   system = "aarch64-darwin";
   # Get Terraform 1.2.9 from nixpkgs-terraform
   terraform_1_2_9 = inputs.nixpkgs-terraform.packages.${system}."terraform-1.2.9";
-  
+
   tilt-packages = with pkgs; [
     tilt
     # kubernetes-helm removed - using homebrew helm@3 instead
@@ -17,10 +17,18 @@ let
     kubecolor
     kubelogin
     go-task
-    gh
     azure-cli
     # testkube
     playwright-test
+  ];
+  ios-brews = [
+    "swiftlint"
+    "swiftgen"
+    "xcbeautify"
+    "xcode-build-server"
+  ];
+  ios-packages = with pkgs; [
+    (ruby_3_4.withPackages (ps: with ps; [ bundler ]))
   ];
   tf-packages = with pkgs; [
     # I've also put terragrunt in local bin because I'm a bad person
@@ -39,20 +47,34 @@ in
   homebrew.casks = [
     "cursor"
     "aws-vpn-client"
+    "claude"
+    "codelayer"
+    "codex-app"
+    "iterm2"
+  ];
+  homebrew.taps = [
+    "atlassian/homebrew-acli"
+    "axon-rto/tap"
+    "humanlayer/humanlayer"
   ];
   homebrew.brews = [
     { name = "helm@3"; link = true; }
     "testkube"
-  ];
-
+    "acli"
+    "gh"
+    #"engram"
+    "switchaudio-osx"
+    "terminal-notifier"
+  ] ++ ios-brews;
 
   # host-specific home-manager configuration
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
       go
       android-tools
+      yarn
       #graphite-cli
-    ] ++ tilt-packages ++ tf-packages;
+    ] ++ tilt-packages ++ tf-packages ++ ios-packages;
 
     home.sessionVariables = {
       # https://axon.quip.com/MxymAs10jX77

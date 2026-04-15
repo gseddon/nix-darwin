@@ -4,6 +4,7 @@
     packages = with pkgs; [
       # dev tools
       awscli2
+      pipx
       # curl
       # direnv
       fzf
@@ -19,6 +20,7 @@
 
       # programming languages
       # mise # node, deno, bun, rust, python, etc.
+      ncdu
 
       # misc
       nil
