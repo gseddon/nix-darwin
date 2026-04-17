@@ -48,6 +48,7 @@ in
     "cursor"
     "aws-vpn-client"
     "claude"
+    "claude-code@latest"
     "codelayer"
     "codex-app"
     "iterm2"
@@ -62,9 +63,9 @@ in
     "testkube"
     "acli"
     "gh"
-    #"engram"
     "switchaudio-osx"
     "terminal-notifier"
+    "git-filter-repo"
   ] ++ ios-brews;
 
   # host-specific home-manager configuration

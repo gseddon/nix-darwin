@@ -20,7 +20,6 @@ in
 
     casks = [
       "1password"
-      "claude-code"
       "chatgpt"
       "karabiner-elements"
       "kitty"
