@@ -29,14 +29,15 @@ in
       "monitorcontrol"
       "whatsapp"
       "visual-studio-code"
+      { name = "emacs-plus-app"; args = { no_quarantine = false; }; }
       #"betterdisplay"
     ] ++ padel_apps;
     brews = [
       "displayplacer"
-      "emacs-plus"
       "hatch"
       "openjdk@21" # sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
       "swiftgen"   # iOS code generation from resources
+      "yq"
     ];
     taps = [
       "d12frosted/homebrew-emacs-plus"

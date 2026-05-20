@@ -26,6 +26,7 @@
       extra-sandbox-paths = [
         "${config.home.homeDirectory}/.secrets"
       ];
+      download-buffer-size = 524288000; # 500 MiB
     };
     enable = false; # using determinate installer
   };
@@ -53,7 +54,9 @@
           # broken = true;
         };
       };
-      
+
+      # direnv's zsh test suite hangs under the Nix sandbox on macOS
+      direnv = prev.direnv.overrideAttrs (_: { doCheck = false; doInstallCheck = false; });
     })
   ];
 
@@ -68,6 +71,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "hm-backup";
     users.${primaryUser} = {
       imports = [
         ../home

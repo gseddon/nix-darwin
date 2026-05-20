@@ -14,7 +14,7 @@
       ripgrep
       act
       bat
-      yq
+      supabase-cli
 
       sshpass
 

@@ -66,6 +66,9 @@ in
     "switchaudio-osx"
     "terminal-notifier"
     "git-filter-repo"
+    "libqalculate"
+    "vercel-cli"
+    "rtk"
   ] ++ ios-brews;
 
   # host-specific home-manager configuration
