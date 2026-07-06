@@ -57,6 +57,7 @@ in
     "atlassian/homebrew-acli"
     "axon-rto/tap"
     "humanlayer/humanlayer"
+    "common-fate/granted"
   ];
   homebrew.brews = [
     { name = "helm@3"; link = true; }
@@ -69,6 +70,7 @@ in
     "libqalculate"
     "vercel-cli"
     "rtk"
+    "granted"
   ] ++ ios-brews;
 
   # host-specific home-manager configuration

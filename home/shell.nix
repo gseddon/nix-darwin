@@ -9,6 +9,7 @@ _: {
       la = "ls -la";
       ".." = "cd ..";
       "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin#macbook-air";
+      assume = "source /opt/homebrew/bin/assume";
     };
     oh-my-zsh = {
       enable = true;
@@ -22,6 +23,7 @@ _: {
       ];
       theme = "agnoster";
       extraConfig = ''
+        SHOW_AWS_PROMPT=false # suppress aws plugin's <aws:profile> <region:...> in RPROMPT
         ZSH_DISABLE_COMPFIX="true" # disable compaudit (slow). This  doesn't seem to work yet.
         #zmodload zsh/zprof
         #zprof

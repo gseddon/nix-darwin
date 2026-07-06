@@ -11,6 +11,7 @@
       "*.code-workspace"
       ".vscode"
       "**/.DS_Store"
+      ".claude/worktrees"
     ];
     settings = {
       user = {
@@ -38,12 +39,6 @@
       github.user = "gareth.seddon@gmail.com";
       "credential \"https://github.com\"" = {
         helper = "!/opt/homebrew/bin/gh auth git-credential";
-      };
-      # URL rewrites to use SSH instead of HTTPS
-      url = {
-        "git@git.taservs.net:" = {
-          insteadOf = "https://git.taservs.net/";
-        };
       };
     };
   };

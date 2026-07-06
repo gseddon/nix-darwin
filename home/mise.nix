@@ -17,7 +17,7 @@
       };
 
       tools = {
-        node = "lts";
+        node = "22.22.0";
         uv = "latest";
         # rust = "stable";
       };
