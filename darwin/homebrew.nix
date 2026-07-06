@@ -19,6 +19,9 @@ in
 
     casks = [
       "1password"
+      "claude-code"
+      "claude"
+      "codex-app"
       "chatgpt"
       "karabiner-elements"
       "kitty"

@@ -11,6 +11,8 @@
     # "slack"
     "android-studio"
     "http-toolkit"
+    "qbittorrent"
+    "genymotion"
   ];
 
   # host-specific home-manager configuration
@@ -21,11 +23,6 @@
 
     programs = {
       git.settings.user.email = "gareth.seddon@gmail.com";
-      zsh = {
-        initContent = ''
-          # source ${./shell-functions.sh}
-        '';
-      };
     };
   };
 }
