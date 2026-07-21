@@ -37,8 +37,13 @@
       pull.rebase = "true";
       fetch.prune = "true";
       github.user = "gareth.seddon@gmail.com";
+      # Empty first entry resets the inherited `osxkeychain` helper (set in the
+      # nix git package's system gitconfig) so only gh serves creds for these hosts.
       "credential \"https://github.com\"" = {
-        helper = "!/opt/homebrew/bin/gh auth git-credential";
+        helper = [ "" "!/opt/homebrew/bin/gh auth git-credential" ];
+      };
+      "credential \"https://git.taservs.net\"" = {
+        helper = [ "" "!/opt/homebrew/bin/gh auth git-credential" ];
       };
     };
   };
