@@ -2,7 +2,6 @@
 let
   padel_apps = [
     "android-studio"
-    "http-toolkit"
   ];
 in
 {
@@ -29,7 +28,11 @@ in
       "monitorcontrol"
       "whatsapp"
       "visual-studio-code"
-      { name = "emacs-plus-app"; args = { no_quarantine = false; }; }
+      {
+        name = "d12frosted/emacs-plus/emacs-plus-app";
+        args = { no_quarantine = false; };
+        trusted = true;
+      }
       #"betterdisplay"
     ] ++ padel_apps;
     brews = [

@@ -10,14 +10,8 @@ let
   terraform_1_2_9 = inputs.nixpkgs-terraform.packages.${system}."terraform-1.2.9";
 
   tilt-packages = with pkgs; [
-    tilt
-    # kubernetes-helm removed - using homebrew helm@3 instead
-    kubeconform
-    kubectl
     kubecolor
-    kubelogin
     go-task
-    azure-cli
     # testkube
     playwright-test
   ];
@@ -49,19 +43,25 @@ in
     "aws-vpn-client"
     "claude"
     "claude-code@latest"
-    "codelayer"
     "codex-app"
     "iterm2"
+    "whatsapp"
   ];
   homebrew.taps = [
-    "atlassian/homebrew-acli"
+    { name = "atlassian/homebrew-acli"; trusted = true; }
     "axon-rto/tap"
-    "humanlayer/humanlayer"
     "common-fate/granted"
+    "azure/kubelogin"
   ];
   homebrew.brews = [
     { name = "helm@3"; link = true; }
+    "kubectl"
+    "azure-cli"
+    { name = "azure/kubelogin/kubelogin"; trusted = true; }
+    "tilt"
+    "kubeconform"
     "testkube"
+    "jq"
     "acli"
     "gh"
     "switchaudio-osx"

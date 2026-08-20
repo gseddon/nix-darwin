@@ -51,6 +51,12 @@ function main() {
   git checkout "$branch" && git pull
 }
 
+function cdw() {
+  local wt
+  wt=$(git worktree list | grep "$1" | awk '{print $1}')
+  cd "$wt"
+}
+
 
 function imix_test() {
   iex -S mix test $1 --trace
