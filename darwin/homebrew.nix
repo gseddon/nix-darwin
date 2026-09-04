@@ -21,16 +21,13 @@ in
       "1password"
       "claude-code"
       "claude"
-      "codex-app"
       "chatgpt"
       "karabiner-elements"
       "kitty"
-      "kiro"
       "obsidian"
       "raycast"
       "monitorcontrol"
       "whatsapp"
-      "visual-studio-code"
       {
         name = "d12frosted/emacs-plus/emacs-plus-app";
         args = { no_quarantine = false; };

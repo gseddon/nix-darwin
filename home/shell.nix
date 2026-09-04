@@ -1,4 +1,9 @@
 _: {
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -19,33 +24,16 @@ _: {
         # "direnv"
         "fzf"
         "git"
-        "z"
       ];
       theme = "agnoster";
       extraConfig = ''
         SHOW_AWS_PROMPT=false # suppress aws plugin's <aws:profile> <region:...> in RPROMPT
-        ZSH_DISABLE_COMPFIX="true" # disable compaudit (slow). This  doesn't seem to work yet.
-        #zmodload zsh/zprof
-        #zprof
-        # Top of .zshrc
-        # https://scottspence.com/posts/speeding-up-my-zsh-shell
+        ZSH_DISABLE_COMPFIX="true"
         DISABLE_AUTO_UPDATE="true"
         DISABLE_MAGIC_FUNCTIONS="true"
-        DISABLE_COMPFIX="true"
-
         ZSH_AUTOSUGGEST_USE_ASYNC=1
-
-        # Smarter completion initialization
-        autoload -Uz compinit
-        if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-            compinit
-        else
-            compinit -C
-        fi
-
-        #source $HOME/.config/zsh/scripts/aliases
-        # this fpath extension is for local completions such as RDE
-        #fpath=(~/.zsh_completion $fpath)
+        AGNOSTER_GIT_BRANCH_STATUS=false
+        DISABLE_UNTRACKED_FILES_DIRTY=true
       '';
     };
     initContent = ''

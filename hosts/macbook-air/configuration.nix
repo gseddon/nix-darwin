@@ -9,8 +9,6 @@
   # host-specific homebrew casks
   homebrew.casks = [
     # "slack"
-    "android-studio"
-    "http-toolkit"
     "qbittorrent"
     "genymotion"
   ];

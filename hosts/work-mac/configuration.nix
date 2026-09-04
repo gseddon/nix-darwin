@@ -41,8 +41,6 @@ in
   homebrew.casks = [
     "cursor"
     "aws-vpn-client"
-    "claude"
-    "claude-code@latest"
     "codex-app"
     "iterm2"
     "whatsapp"
