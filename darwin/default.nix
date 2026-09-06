@@ -32,33 +32,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  
-  # Overlay to prevent fish from being built
-  # should be able to fix once https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable/pkgs/by-name/fi/fish
-  # has https://github.com/NixOS/nixpkgs/pull/461779 merged
-  nixpkgs.overlays = [
-    (final: prev: {
-      fish = prev.stdenv.mkDerivation {
-        name = "fish-disabled";
-        version = "disabled";
-        dontUnpack = true;
-        dontBuild = true;
-        installPhase = ''
-          mkdir -p $out/bin
-          echo "#!/bin/sh" > $out/bin/fish
-          echo "echo 'fish is disabled in this configuration'" >> $out/bin/fish
-          chmod +x $out/bin/fish
-        '';
-        meta = {
-          description = "Disabled fish shell";
-          # broken = true;
-        };
-      };
-
-      # direnv's zsh test suite hangs under the Nix sandbox on macOS
-      direnv = prev.direnv.overrideAttrs (_: { doCheck = false; doInstallCheck = false; });
-    })
-  ];
 
   # homebrew installation manager
   nix-homebrew = {
