@@ -40,14 +40,13 @@ in
   homebrew.casks = [
     "cursor"
     "aws-vpn-client"
-    "codex-app"
     "iterm2"
     "whatsapp"
   ];
   homebrew.taps = [
     { name = "atlassian/homebrew-acli"; trusted = true; }
-    "axon-rto/tap"
-    "common-fate/granted"
+    { name = "axon-rto/tap"; trusted = true; }
+    { name = "common-fate/granted"; trusted = true; }
     "azure/kubelogin"
   ];
   homebrew.brews = [

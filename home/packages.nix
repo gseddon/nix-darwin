@@ -27,7 +27,7 @@
       # misc
       nil
       #biome
-      nixfmt-rfc-style
+      nixfmt
       yt-dlp
       ffmpeg
       #ollama

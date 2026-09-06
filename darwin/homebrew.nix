@@ -14,12 +14,11 @@ in
       cleanup = "zap";
     };
 
-    caskArgs.no_quarantine = true;
     global.brewfile = true;
 
     casks = [
       "1password"
-      "claude-code"
+      "claude-code@latest"
       "claude"
       "chatgpt"
       "karabiner-elements"
@@ -30,7 +29,6 @@ in
       "whatsapp"
       {
         name = "d12frosted/emacs-plus/emacs-plus-app";
-        args = { no_quarantine = false; };
         trusted = true;
       }
       #"betterdisplay"
