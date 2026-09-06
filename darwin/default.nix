@@ -33,6 +33,17 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Home Manager already loads oh-my-zsh (agnoster) and runs compinit.
+  # nix-darwin's defaults also run `prompt suse` (TTY device-attribute probes,
+  # which print as ^[[c if the terminal is still starting) and a second
+  # compinit, which slows every new interactive shell.
+  programs.zsh = {
+    enable = true;
+    promptInit = "";
+    enableGlobalCompInit = false;
+    enableBashCompletion = false;
+  };
+
   # homebrew installation manager
   nix-homebrew = {
     user = primaryUser;
