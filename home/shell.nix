@@ -1,19 +1,15 @@
-_: {
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
+{ darwinFlakeAttr, ... }: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+    # oh-my-zsh runs compinit; keep Home Manager from doing it a second time
+    enableCompletion = false;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
       la = "ls -la";
       ".." = "cd ..";
-      "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin#macbook-air";
+      "nix-switch" = "sudo darwin-rebuild switch --flake /etc/nix-darwin#${darwinFlakeAttr}";
       assume = "source /opt/homebrew/bin/assume";
     };
     oh-my-zsh = {

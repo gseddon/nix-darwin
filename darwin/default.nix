@@ -3,6 +3,7 @@
   inputs,
   self,
   primaryUser,
+  darwinFlakeAttr,
   config,
   ...
 }:
@@ -62,7 +63,7 @@
       ];
     };
     extraSpecialArgs = {
-      inherit inputs self primaryUser;
+      inherit inputs self primaryUser darwinFlakeAttr;
     };
   };
 

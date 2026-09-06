@@ -16,7 +16,6 @@ let
     playwright-test
   ];
   ios-brews = [
-    "swiftlint"
     "swiftgen"
     "xcbeautify"
     "xcode-build-server"

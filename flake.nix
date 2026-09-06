@@ -38,25 +38,20 @@
     }@inputs:
     let
       primaryUser = "gseddon";
+      mkDarwin = name:
+        nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            ./darwin
+            ./hosts/${name}/configuration.nix
+          ];
+          specialArgs = {
+            inherit inputs self primaryUser;
+            darwinFlakeAttr = name;
+          };
+        };
     in
     {
-      # build darwin flake using:
-      # $ darwin-rebuild build --flake .#<name>
-      darwinConfigurations."macbook-air" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./darwin
-          ./hosts/macbook-air/configuration.nix
-        ];
-        specialArgs = { inherit inputs self primaryUser; };
-      };
-      darwinConfigurations."work-mac" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./darwin
-          ./hosts/work-mac/configuration.nix
-        ];
-        specialArgs = { inherit inputs self primaryUser; };
-      };
+      darwinConfigurations = nixpkgs.lib.genAttrs [ "macbook-air" "work-mac" ] mkDarwin;
     };
 }
