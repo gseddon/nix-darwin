@@ -39,6 +39,27 @@
         ApplePressAndHoldEnabled = false;
         # TODO can I do caps lock ctrl here?
       };
+
+      # Keyboard > Text Replacements. "with" is quoted because it is a Nix keyword.
+      # Current macOS also keeps a copy in ~/Library/KeyboardServices/TextReplacements.db;
+      # opening that System Settings pane can overwrite this list.
+      CustomUserPreferences.NSGlobalDomain.NSUserDictionaryReplacementItems = [
+        {
+          on = 1;
+          replace = "omw";
+          "with" = "On my way!";
+        }
+        {
+          on = 1;
+          replace = ":rl";
+          "with" = "After you do the relevant research, please ask me clarifying questions before you begin";
+        }
+        {
+          on = 1;
+          replace = ":tt";
+          "with" = "run the relevant services with `task worktree-up -- $services`, and then run the relevant e2e tests with the testkube CLI";
+        }
+      ];
     };
 
   };

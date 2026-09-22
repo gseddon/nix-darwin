@@ -42,6 +42,7 @@ in
     "aws-vpn-client"
     "iterm2"
     "whatsapp"
+    "docker-desktop"
   ];
   homebrew.taps = [
     #{ name = "atlassian/homebrew-acli"; trusted = true; }

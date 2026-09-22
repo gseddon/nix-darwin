@@ -29,7 +29,7 @@
       ];
       download-buffer-size = 524288000; # 500 MiB
     };
-    enable = false; # using determinate installer
+    enable = false; # using determinate/lix installer
   };
 
   nixpkgs.config.allowUnfree = true;
