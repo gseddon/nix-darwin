@@ -27,10 +27,10 @@ in
       "raycast"
       "monitorcontrol"
       "whatsapp"
-      {
-        name = "d12frosted/emacs-plus/emacs-plus-app";
-        trusted = true;
-      }
+      #{
+      #  name = "d12frosted/emacs-plus/emacs-plus-app";
+      #  trusted = true;
+      #}
       #"betterdisplay"
     ] ++ padel_apps;
     brews = [
@@ -41,7 +41,7 @@ in
       "yq"
     ];
     taps = [
-      "d12frosted/homebrew-emacs-plus"
+      #"d12frosted/homebrew-emacs-plus"
     ];
   };
 }

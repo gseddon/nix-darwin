@@ -34,7 +34,7 @@ let
   ];
 in
 {
-  networking.hostName = "EU-JPW5QPV4P4";
+  networking.hostName = "EU-MDFLW7V4GY";
 
   # host-specific homebrew casks
   homebrew.casks = [
@@ -44,8 +44,8 @@ in
     "whatsapp"
   ];
   homebrew.taps = [
-    { name = "atlassian/homebrew-acli"; trusted = true; }
-    { name = "axon-rto/tap"; trusted = true; }
+    #{ name = "atlassian/homebrew-acli"; trusted = true; }
+    #{ name = "axon-rto/tap"; trusted = true; }
     { name = "common-fate/granted"; trusted = true; }
     "azure/kubelogin"
   ];
@@ -58,7 +58,7 @@ in
     "kubeconform"
     "testkube"
     "jq"
-    "acli"
+    #"acli"
     "gh"
     "switchaudio-osx"
     "terminal-notifier"
