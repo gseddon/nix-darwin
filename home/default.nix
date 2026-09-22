@@ -7,6 +7,7 @@
     ./mise.nix
     ./vim.nix
     ./git.nix
+    ./ssh.nix
   ];
 
   home = {
@@ -22,5 +23,9 @@
 
     # create .hushlogin file to suppress login messages
     file.".hushlogin".text = "";
+
+    # Cocoa text system (Safari, Notes, Slack, …). ~ is Option.
+    # Does not apply to Kitty, Cursor, or other non-NSTextView apps.
+    file."Library/KeyBindings/DefaultKeyBinding.dict".source = ./DefaultKeyBinding.dict;
   };
 }
